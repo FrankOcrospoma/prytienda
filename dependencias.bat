@@ -16,9 +16,9 @@ rem Ejecutar las migraciones de la base de datos
 call php artisan migrate
 
 rem Abrir una nueva consola y ejecutar el servidor de desarrollo
-start cmd /k "php artisan serve"
+start cmd /k "npm run dev"
 
 rem Compilar assets
-call npm run dev
+call php artisan serve
 
 
