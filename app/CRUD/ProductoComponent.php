@@ -59,23 +59,29 @@ class ProductoComponent implements CRUDComponent
     public function inputs()
     {
         $options = $this->options(); // Obtenemos las opciones del método options()
+    
+        // Agregamos el primer ítem "Selecciona una opción" a cada campo select
+        $optionsWithDefault = [
+            'categoria_id' => ['Selecciona una opción'] + $options['categoria_id'],
+            'marca_id' => ['Selecciona una opción'] + $options['marca_id'],
+            'unidad_id' => ['Selecciona una opción'] + $options['unidad_id'],
+        ];
         
         return [
             'codigo' => 'number',
             'nombre' => 'text',
             'abreviatura' => 'text',
             'categoria_id' => [
-                'select' => $options['categoria_id'], // Pasamos las opciones del campo categoria_id
+                'select' => $optionsWithDefault['categoria_id'], // Usamos las opciones con el primer ítem
             ],
             'marca_id' => [
-                'select' => $options['marca_id'], // Pasamos las opciones del campo marca_id
+                'select' => $optionsWithDefault['marca_id'], // Usamos las opciones con el primer ítem
             ],
             'unidad_id' => [
-                'select' => $options['unidad_id'], // Pasamos las opciones del campo unidad_id
+                'select' => $optionsWithDefault['unidad_id'], // Usamos las opciones con el primer ítem
             ],
             'p_compra' => 'text',
-            'p_venta' =>  'text',
-              
+            'p_venta' => 'text',
         ];
     }
     
