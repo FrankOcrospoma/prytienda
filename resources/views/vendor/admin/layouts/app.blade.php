@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>{{ __('EasyPanel') }} - {{ $title ?? __('Home') }}</title>
+    <title>{{ __('Tienda') }} - {{ $title ?? __('Home') }}</title>
 
     {{--Scripts which must load before full loading--}}
     @style('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css')
@@ -49,7 +49,7 @@
                 <!-- Logo -->
                 <div class="navbar-brand">
                     <a href="@route(getRouteName().'.home')">
-                        <span class="logo-text">{{ __('EasyPanel') }}</span>
+                        <span class="logo-text">{{ __('Tienda') }}</span>
                     </a>
 
                     <div class="container-checkbox">
