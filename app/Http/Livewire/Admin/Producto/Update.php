@@ -22,7 +22,7 @@ class Update extends Component
     public $p_venta;
     
     protected $rules = [
-        'codigo' => 'required|numeric',
+        'codigo' => 'required|numeric|unique:productos,codigo',
         'nombre' => 'required|string|max:255',
         'abreviatura' => 'required|string|max:50',
         'categoria_id' => 'required|not_in:0',

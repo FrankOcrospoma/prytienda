@@ -107,7 +107,9 @@ class ProductoComponent implements CRUDComponent
     public function validationRules()
     {
         return [
-            'codigo' => 'required|numeric',
+            'codigo' => 
+                'required|numeric|unique:productos,codigo', // La regla unique verifica la unicidad en la tabla 'productos' para el campo 'codigo'
+          
             'nombre' => 'required|string|max:255',
             'abreviatura' => 'required|string|max:50',
             'categoria_id' => 'required|not_in:0', // Asegúrate de que no se seleccione la opción por defecto
@@ -117,7 +119,6 @@ class ProductoComponent implements CRUDComponent
             'p_venta' => 'required|numeric|min:0',
         ];
     }
-    
 
     // Where files will store for inputs
     public function storePaths()
