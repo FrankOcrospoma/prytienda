@@ -50,7 +50,7 @@ class ProductoComponent implements CRUDComponent
     // Searchable fields, if you dont want search feature, remove it
     public function searchable()
     {
-        return ['codigo', 'nombre', 'abreviatura', 'categoria_id', 'marca_id', 'unidad_id', 'p_compra', 'p_venta'];
+        return ['codigo', 'nombre', 'abreviatura', 'categoria.nombre', 'marca.nombre', 'unidad.nombre', 'p_compra', 'p_venta'];
     }
 // 'marca', 'unidad', 'p_compra', 'p_venta'
     // Write every fields in your db which you want to have a input

@@ -24,12 +24,5 @@ class Producto extends Model
     {
         return $this->belongsTo(Unidad::class, 'unidad_id');
     }
-    public function toArray()
-    {
-        $array = parent::toArray();
-        $array['categoria'] = $this->categoria->nombre;
-        $array['marca'] = $this->marca->nombre;
-        $array['unidad'] = $this->unidad->nombre;
-        return $array;
-    }
+   
 }
