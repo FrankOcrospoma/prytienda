@@ -58,10 +58,4 @@ class CategoriaComponent implements CRUDComponent
     {
         return [];
     }
-
-    // Configure pagination for the list page
-    public function pagination()
-    {
-        return 5; // Specify the number of items per page, e.g., 10 items per page
-    }
 }
