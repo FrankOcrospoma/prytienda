@@ -36,9 +36,9 @@ class ProductoComponent implements CRUDComponent
           'codigo',
           'nombre',
           'abreviatura',
-          'categoria.nombre', // Cambiamos el nombre del campo a "categ"
-          'marca.nombre',
-          'unidad.nombre',
+          'categoria', 
+          'marca',
+          'unidad',
           'p_compra',
           'p_venta',
       ];
@@ -109,7 +109,6 @@ class ProductoComponent implements CRUDComponent
         return [
             'codigo' => 
                 'required|numeric|unique:productos,codigo', // La regla unique verifica la unicidad en la tabla 'productos' para el campo 'codigo'
-          
             'nombre' => 'required|string|max:255',
             'abreviatura' => 'required|string|max:50',
             'categoria_id' => 'required|not_in:0', // Asegúrate de que no se seleccione la opción por defecto

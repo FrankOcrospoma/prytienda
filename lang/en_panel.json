@@ -91,5 +91,13 @@
     "Unidad Nombre": "Unidad Nombre",
     "Categoria_id": "Categoria_id",
     "Marca_id": "Marca_id",
-    "Unidad_id": "Unidad_id"
+    "Unidad_id": "Unidad_id",
+    "Categoria Nombre|categoria": "Categoria Nombre|categoria",
+    "Categoria Nombre As Categoria": "Categoria Nombre As Categoria",
+    "Marca Nombre As Marca": "Marca Nombre As Marca",
+    "Unidad Nombre As Unidad": "Unidad Nombre As Unidad",
+    "Categoria_nombre": "Categoria_nombre",
+    "Categoria Nombre:categoria": "Categoria Nombre:categoria",
+    "Marca Nombre:marca": "Marca Nombre:marca",
+    "Unidad Nombre:unidad": "Unidad Nombre:unidad"
 }

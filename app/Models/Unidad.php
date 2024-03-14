@@ -10,4 +10,8 @@ class Unidad extends Model
     public $timestamps = false;
     use HasFactory;
     protected $fillable = ['codigo','nombre'];
+    public function __toString()
+    {
+        return $this->nombre; // Devuelve el nombre de la categoría al convertir a cadena
+    }
 }

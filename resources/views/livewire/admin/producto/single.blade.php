@@ -2,9 +2,9 @@
     <td class="">{{ $producto->codigo }}</td>
     <td class="">{{ $producto->nombre }}</td>
     <td class="">{{ $producto->abreviatura }}</td>
-    <td class="">{{ $producto->categoria->nombre }}</td>
-    <td class="">{{ $producto->marca->nombre }}</td>
-    <td class="">{{ $producto->unidad->nombre }}</td>
+    <td class="">{{ $producto->categoria }}</td>
+    <td class="">{{ $producto->marca }}</td>
+    <td class="">{{ $producto->unidad }}</td>
     <td class="">{{ $producto->p_compra }}</td>
     <td class="">{{ $producto->p_venta }}</td>
     
