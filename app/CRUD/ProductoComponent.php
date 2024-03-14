@@ -110,6 +110,9 @@ class ProductoComponent implements CRUDComponent
             'codigo' => 'required|numeric',
             'nombre' => 'required|string|max:255',
             'abreviatura' => 'required|string|max:50',
+            'categoria_id' => 'required|not_in:0', // Asegúrate de que no se seleccione la opción por defecto
+            'marca_id' => 'required|not_in:0', // Asegúrate de que no se seleccione la opción por defecto
+            'unidad_id' => 'required|not_in:0', // Asegúrate de que no se seleccione la opción por defecto
             'p_compra' => 'required|numeric|min:0',
             'p_venta' => 'required|numeric|min:0',
         ];
