@@ -37,7 +37,7 @@ return [
     'additional_middlewares' => [],
 
     // Count of pagination in CRUD lists
-    'pagination_count' => 20,
+    'pagination_count' => 5,
 
     // Lazy validation for Livewire components
     'lazy_mode' => true,

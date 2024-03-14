@@ -13,13 +13,7 @@
     <form class="form-horizontal" wire:submit.prevent="create" enctype="multipart/form-data">
 
         <div class="card-body">
-                        <!-- Nombre Input -->
-            <div class='form-group'>
-                <label for='input-nombre' class='col-sm-2 control-label '> {{ __('Nombre') }}</label>
-                <input type='text' id='input-nombre' wire:model.lazy='nombre' class="form-control  @error('nombre') is-invalid @enderror" placeholder='' autocomplete='on'>
-                @error('nombre') <div class='invalid-feedback'>{{ $message }}</div> @enderror
-            </div>
-
+            
         </div>
 
         <div class="card-footer">

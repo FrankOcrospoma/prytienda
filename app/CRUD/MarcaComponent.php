@@ -39,18 +39,14 @@ class MarcaComponent implements CRUDComponent
     // "password", "number", "email", "select", "date", "datetime", "time"
     public function inputs()
     {
-        return [
-            'nombre' => 'text',
-        ];
+        return [];
     }
 
     // Validation in update and create actions
     // It uses Laravel validation system
     public function validationRules()
     {
-        return [
-            'nombre' => 'required|string|max:255',
-        ];
+        return [];
     }
 
     // Where files will store for inputs

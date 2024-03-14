@@ -12,15 +12,14 @@ class Update extends Component
 
     public $marca;
 
-    public $nombre;
     
     protected $rules = [
-        'nombre' => 'required|string|max:255',        
+        
     ];
 
     public function mount(Marca $Marca){
         $this->marca = $Marca;
-        $this->nombre = $this->marca->nombre;        
+        
     }
 
     public function updated($input)
@@ -36,7 +35,6 @@ class Update extends Component
         $this->dispatchBrowserEvent('show-message', ['type' => 'success', 'message' => __('UpdatedMessage', ['name' => __('Marca') ]) ]);
         
         $this->marca->update([
-            'nombre' => $this->nombre,
             'user_id' => auth()->id(),
         ]);
     }

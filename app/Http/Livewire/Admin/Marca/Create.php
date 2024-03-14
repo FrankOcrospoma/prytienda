@@ -10,10 +10,9 @@ class Create extends Component
 {
     use WithFileUploads;
 
-    public $nombre;
     
     protected $rules = [
-        'nombre' => 'required|string|max:255',        
+        
     ];
 
     public function updated($input)
@@ -29,7 +28,6 @@ class Create extends Component
         $this->dispatchBrowserEvent('show-message', ['type' => 'success', 'message' => __('CreatedMessage', ['name' => __('Marca') ])]);
         
         Marca::create([
-            'nombre' => $this->nombre,
             'user_id' => auth()->id(),
         ]);
 
