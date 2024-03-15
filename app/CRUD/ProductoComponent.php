@@ -11,13 +11,13 @@ use App\Models\Unidad; // Importa el modelo de Categoría
 
 
 
-
 class ProductoComponent implements CRUDComponent
 {
     // Manage actions in crud
     public $create = true;
     public $delete = true;
     public $update = true;
+    
 
     // If you will set it true it will automatically
     // add `user_id` to create and update action
@@ -41,9 +41,20 @@ class ProductoComponent implements CRUDComponent
           'unidad',
           'p_compra',
           'p_venta',
+          
       ];
   }
-  
+  public function buttons()
+{
+    return [
+        'export' => [
+            'text' => 'Exportar', // Texto del botón
+            'route' => 'productos.export', // Nombre de la ruta para el controlador de exportación
+            'class' => 'btn-success', // Clase de estilos del botón (opcional)
+        ],
+    ];
+}
+
   
   
   
@@ -119,12 +130,12 @@ class ProductoComponent implements CRUDComponent
         ];
     }
 
+    
     // Where files will store for inputs
     public function storePaths()
     {
         return [];
     }
-
-     
+   
 }
 

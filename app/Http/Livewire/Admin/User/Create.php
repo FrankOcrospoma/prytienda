@@ -10,9 +10,14 @@ class Create extends Component
 {
     use WithFileUploads;
 
+    public $name;
+    public $email;
+    public $password;
     
     protected $rules = [
-        
+        'name' => 'required|string|max:255',
+        'email' => 'required|email|unique:users,email',
+        'password' => 'required|string|min:8',        
     ];
 
     public function updated($input)
@@ -28,6 +33,9 @@ class Create extends Component
         $this->dispatchBrowserEvent('show-message', ['type' => 'success', 'message' => __('CreatedMessage', ['name' => __('User') ])]);
         
         User::create([
+            'name' => $this->name,
+            'email' => $this->email,
+            'password' => $this->password,
             'user_id' => auth()->id(),
         ]);
 

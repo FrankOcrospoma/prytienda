@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Foundation\Application;
+use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Inertia\Inertia;
 
 
@@ -12,6 +13,7 @@ Route::get('/', function () {
 
 });
 
+Route::get('/pdf', [ProductoController::class, 'pdf'] )->name('productos.pdf');
 
 
 Route::middleware([

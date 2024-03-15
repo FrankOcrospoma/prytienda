@@ -15,7 +15,9 @@
                         @if(getCrudConfig('Producto')->create && hasPermission(getRouteName().'.producto.create', 1, 1))
                         <div class="col-md-4 right-0">
                             <a href="@route(getRouteName().'.producto.create')" class="btn btn-success">{{ __('CreateTitle', ['name' => __('Producto') ]) }}</a>
+                            <a href="{{route('productos.pdf')}}" class="btn btn-info ml-2">{{ __('Export PDF') }}</a>
                         </div>
+
                         @endif
                         @if(getCrudConfig('Producto')->searchable())
                         <div class="col-md-4">
@@ -44,8 +46,8 @@
                             <th scope="col" style='cursor: pointer' wire:click="sort('categoria')"> <i class='fa @if($sortType == 'desc' and $sortColumn == 'categoria') fa-sort-amount-down ml-2 @elseif($sortType == 'asc' and $sortColumn == 'categoria') fa-sort-amount-up ml-2 @endif'></i> {{ __('Categoria') }} </th>
                             <th scope="col" style='cursor: pointer' wire:click="sort('marca')"> <i class='fa @if($sortType == 'desc' and $sortColumn == 'marca') fa-sort-amount-down ml-2 @elseif($sortType == 'asc' and $sortColumn == 'marca') fa-sort-amount-up ml-2 @endif'></i> {{ __('Marca') }} </th>
                             <th scope="col" style='cursor: pointer' wire:click="sort('unidad')"> <i class='fa @if($sortType == 'desc' and $sortColumn == 'unidad') fa-sort-amount-down ml-2 @elseif($sortType == 'asc' and $sortColumn == 'unidad') fa-sort-amount-up ml-2 @endif'></i> {{ __('Unidad') }} </th>
-                            <th scope="col" style='cursor: pointer' wire:click="sort('p_compra')"> <i class='fa @if($sortType == 'desc' and $sortColumn == 'p_compra') fa-sort-amount-down ml-2 @elseif($sortType == 'asc' and $sortColumn == 'p_compra') fa-sort-amount-up ml-2 @endif'></i> {{ __('P_compra') }} </th>
-                            <th scope="col" style='cursor: pointer' wire:click="sort('p_venta')"> <i class='fa @if($sortType == 'desc' and $sortColumn == 'p_venta') fa-sort-amount-down ml-2 @elseif($sortType == 'asc' and $sortColumn == 'p_venta') fa-sort-amount-up ml-2 @endif'></i> {{ __('P_venta') }} </th>
+                            <th scope="col" style='cursor: pointer' wire:click="sort('p_compra')"> <i class='fa @if($sortType == 'desc' and $sortColumn == 'p_compra') fa-sort-amount-down ml-2 @elseif($sortType == 'asc' and $sortColumn == 'p_compra') fa-sort-amount-up ml-2 @endif'></i> {{ __('P. Compra') }} </th>
+                            <th scope="col" style='cursor: pointer' wire:click="sort('p_venta')"> <i class='fa @if($sortType == 'desc' and $sortColumn == 'p_venta') fa-sort-amount-down ml-2 @elseif($sortType == 'asc' and $sortColumn == 'p_venta') fa-sort-amount-up ml-2 @endif'></i> {{ __('P. Venta') }} </th>
                             
                             @if(getCrudConfig('Producto')->delete or getCrudConfig('Producto')->update)
                                 <th scope="col">{{ __('Action') }}</th>

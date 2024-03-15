@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
 {
@@ -23,6 +24,16 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+     protected static function boot()
+     {
+         parent::boot();
+ 
+         // Escuchar el evento 'creating' y encriptar la contraseña antes de guardarla
+         static::creating(function ($user) {
+             $user->password = Hash::make($user->password);
+         });
+     }
     protected $fillable = [
         'name',
         'email',
