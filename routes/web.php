@@ -7,6 +7,7 @@ use App\Models\Producto;
 use App\Models\Categoria; // Importa el modelo de Categoría
 use App\Models\Marca; // Importa el modelo de Categoría
 use App\Models\Unidad; // Importa el modelo de Categoría
+use App\Models\User; // Importa el modelo de Categoría
 
 
 
@@ -40,6 +41,13 @@ Route::get('/marcaspdf', function () {
     $pdf = PDF::loadView('pdf.marcaspdf', compact('marcas'));
     return $pdf->stream();
 })->name('marcas.pdf');
+
+Route::get('/userspdf', function () {
+    // $pdf = App::make('dompdf.wrapper');
+    $marcas=User::all();
+    $pdf = PDF::loadView('pdf.userspdf', compact('users'));
+    return $pdf->stream();
+})->name('users.pdf');
 
 
 Route::middleware([

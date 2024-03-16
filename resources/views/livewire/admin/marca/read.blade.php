@@ -15,7 +15,7 @@
                         @if(getCrudConfig('Marca')->create && hasPermission(getRouteName().'.marca.create', 1, 1))
                         <div class="col-md-4 right-0">
                             <a href="@route(getRouteName().'.marca.create')" class="btn btn-success">{{ __('CreateTitle', ['name' => __('Marca') ]) }}</a>
-                            <a href="{{route('marcas.pdf')}}" class="btn btn-info ml-2">{{ __('Export PDF') }}</a>
+                            <a href="{{route('marcas.pdf')}}" class="btn btn-info ml-2"target="_blank">{{ __('Export PDF') }}</a>
 
                         </div>
                         @endif
