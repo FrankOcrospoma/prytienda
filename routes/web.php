@@ -44,7 +44,7 @@ Route::get('/marcaspdf', function () {
 
 Route::get('/userspdf', function () {
     // $pdf = App::make('dompdf.wrapper');
-    $marcas=User::all();
+    $users=User::all();
     $pdf = PDF::loadView('pdf.userspdf', compact('users'));
     return $pdf->stream();
 })->name('users.pdf');
