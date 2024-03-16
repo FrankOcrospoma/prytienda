@@ -3,21 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lista de Productos</title>
+<title>Lista de Unidades</title>
 <style>
     body {
         font-family: 'Arial', sans-serif;
         margin: 0;
         padding: 0;
-     
+        position: relative;
     }
 
     .container {
-        max-width: 1200px;
-       
+        max-width: 800px;
+        margin: 20px auto;
         background-color: #fff;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
     }
 
     h1 {
@@ -60,32 +62,38 @@
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
     }
+
+    .logo-top-left {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 80px; /* Ajusta el tamaño según tu logo */
+        z-index: 999;
+    }
+
+    .logo-top-right {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 80px; /* Ajusta el tamaño según tu logo */
+        z-index: 999;
+    }
 </style>
 </head>
 <body>
+
+
     <div class="container">
-        <h1>Lista de Productos</h1>
-        <table>
+        <h1>Lista de Unidades</h1>
+        <table> 
             <tr>
-                <th>Código</th>
+                <th>CODIGO</th>
                 <th>Nombre</th>
-                <th>Abreviatura</th>
-                <th>Categoría</th>
-                <th>Marca</th>
-                <th>Unidad</th>
-                <th>P.Compra</th>
-                <th>P.Venta</th>
             </tr>
-            @foreach($productos as $producto)
+            @foreach($unidades as $unidad)
                 <tr>
-                    <td>{{ $producto->codigo }}</td>
-                    <td>{{ $producto->nombre }}</td>
-                    <td>{{ $producto->abreviatura }}</td>
-                    <td>{{ $producto->categoria->nombre }}</td>
-                    <td>{{ $producto->marca->nombre }}</td>
-                    <td>{{ $producto->unidad->nombre }}</td>
-                    <td>{{ $producto->p_compra }}</td>
-                    <td>{{ $producto->p_venta }}</td>
+                    <td>{{ $unidad->codigo }}</td>
+                    <td>{{ $unidad->nombre }}</td>
                 </tr>
             @endforeach
         </table>

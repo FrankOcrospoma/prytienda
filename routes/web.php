@@ -1,9 +1,12 @@
 <?php
 
-use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
-use Barryvdh\DomPDF\Facade\Pdf;
+use Barryvdh\DomPDF\Facade\PDF;
 use Inertia\Inertia;
+use App\Models\Producto;
+use App\Models\Categoria; // Importa el modelo de Categoría
+use App\Models\Marca; // Importa el modelo de Categoría
+use App\Models\Unidad; // Importa el modelo de Categoría
 
 
 
@@ -13,7 +16,30 @@ Route::get('/', function () {
 
 });
 
-Route::get('/pdf', [ProductoController::class, 'pdf'] )->name('productos.pdf');
+Route::get('/productospdf', function () {
+    // $pdf = App::make('dompdf.wrapper');
+    $productos=Producto::all();
+    $pdf = PDF::loadView('pdf.productospdf', compact('productos'));
+    return $pdf->stream();
+})->name('productos.pdf');
+Route::get('/categoriaspdf', function () {
+    // $pdf = App::make('dompdf.wrapper');
+    $categorias=Categoria::all();
+    $pdf = PDF::loadView('pdf.categoriaspdf', compact('categorias'));
+    return $pdf->stream();
+})->name('categorias.pdf');
+Route::get('/unidadespdf', function () {
+    // $pdf = App::make('dompdf.wrapper');
+    $unidades=Unidad::all();
+    $pdf = PDF::loadView('pdf.unidadespdf', compact('unidades'));
+    return $pdf->stream();
+})->name('unidades.pdf');
+Route::get('/marcaspdf', function () {
+    // $pdf = App::make('dompdf.wrapper');
+    $marcas=Marca::all();
+    $pdf = PDF::loadView('pdf.marcaspdf', compact('marcas'));
+    return $pdf->stream();
+})->name('marcas.pdf');
 
 
 Route::middleware([
@@ -25,6 +51,7 @@ Route::middleware([
         return Inertia::render('Dashboard');
     })->name('dashboard');
 });
+//Route::get('/productos/exportar-pdf', [ProductoComponent::class, 'exportPdf'])->name('productos.export.pdf');
 
 
 

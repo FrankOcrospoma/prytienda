@@ -44,17 +44,6 @@ class ProductoComponent implements CRUDComponent
           
       ];
   }
-  public function buttons()
-{
-    return [
-        'export' => [
-            'text' => 'Exportar', // Texto del botón
-            'route' => 'productos.export', // Nombre de la ruta para el controlador de exportación
-            'class' => 'btn-success', // Clase de estilos del botón (opcional)
-        ],
-    ];
-}
-
   
   
   

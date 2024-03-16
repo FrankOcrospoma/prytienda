@@ -15,6 +15,8 @@
                         @if(getCrudConfig('Categoria')->create && hasPermission(getRouteName().'.categoria.create', 1, 1))
                         <div class="col-md-4 right-0">
                             <a href="@route(getRouteName().'.categoria.create')" class="btn btn-success">{{ __('CreateTitle', ['name' => __('Categoria') ]) }}</a>
+                            <a href="{{route('categorias.pdf')}}" class="btn btn-info ml-2">{{ __('Export PDF') }}</a>
+
                         </div>
                         @endif
                         @if(getCrudConfig('Categoria')->searchable())
