@@ -11,6 +11,7 @@ use App\Models\User; // Importa el modelo de Categoría
 
 
 
+
 Route::get('/', function () {
   
     return redirect()->route('login');
@@ -50,6 +51,7 @@ Route::get('/userspdf', function () {
 })->name('users.pdf');
 
 
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -59,6 +61,9 @@ Route::middleware([
         return Inertia::render('Dashboard');
     })->name('dashboard');
 });
+
+
+
 //Route::get('/productos/exportar-pdf', [ProductoComponent::class, 'exportPdf'])->name('productos.export.pdf');
 
 
